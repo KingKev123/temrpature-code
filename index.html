@@ -4,212 +4,109 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unit Conversions</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f9f9f9;
-        }
-        
-        header {
-            text-align: center;
-            background-color: #333;
-            color: white;
-            padding: 15px;
-            margin-bottom: 20px;
-        }
-        
-        nav {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        
-        nav button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            margin: 0 5px;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-        
-        nav button:hover {
-            background-color: #45a049;
-        }
-        
-        section {
-            background-color: white;
-            margin: 20px 0;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        figure {
-            text-align: center;
-        }
-        
-        fieldset {
-            border: 2px solid #ddd;
-            padding: 15px;
-            margin: 15px 0;
-        }
-        
-        input[type="number"] {
-            width: 200px;
-            padding: 8px;
-            margin: 5px 0;
-            border: 1px solid #ddd;
-            border-radius: 3px;
-        }
-        
-        button {
-            background-color: #008CBA;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            border-radius: 4px;
-            margin: 10px 0;
-        }
-        
-        button:hover {
-            background-color: #007B9A;
-        }
-        
-        aside {
-            background-color: #e7f3ff;
-            border-left: 4px solid #2196F3;
-            padding: 10px;
-            margin: 15px 0;
-            font-style: italic;
-        }
-        
-        #go-home {
-            text-align: center;
-            margin: 30px 0;
-        }
-        
-        #go-home img {
-            width: 50px;
-            height: 50px;
-        }
-        
-        footer {
-            text-align: center;
-            background-color: #333;
-            color: white;
-            padding: 15px;
-            margin-top: 30px;
-        }
-        
-        .output {
-            background-color: #f0f0f0;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <section id="home">
-        <header><b>Unit Conversions</b></header>
+        <header>
+            Unit Conversions
+        </header>
         <nav>
-            <a href="#temperature"><button type="button">Temperature</button></a>
-            <a href="#weight"><button type="button">Weight</button></a>
-            <a href="#distance"><button type="button">Distance</button></a>
+            <div class="topdiv">
+                <a href="#temperature"><button type="button" class="topmenu">Temperature</button></a>
+                <a href="#weight"><button type="button" class="topmenu">Weight</button></a>
+                <a href="#distance"><button type="button" class="topmenu">Distance</button></a>
+            </div>
         </nav>
-    </section>
-
+    </section>    
+    <div style="clear:both;"></div>
+ 
     <div id="all-conversion-sections">
-        <section id="temperature">
+
+        <section id="temperature" class="b temperature">
             <div id="tmp">
                 <figure>
                     <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-CD0101EN-SkillsNetwork/labs/Theia%20Labs/02%20-%20HTML5%20Elements/images/thermo.png" 
-                         width="200" alt="Thermometer"/>
+                         width="150" alt="Thermometer"/>
                     <figcaption>Celsius to Fahrenheit Conversion</figcaption>
                 </figure>
-
-                <article>
+                <article> 
                     <fieldset>
                         <legend>Temperature</legend>
-                        <label for="celsius">Celsius</label> <br/>
-                        <input type="number" id="celsius" placeholder="Enter temperature"> <br/>
-                        
-                        <button type="button" onclick="convertTemperature()">Convert</button> <br/>
-                        
-                        <input type="number" id="fahrenheit" class="output" readonly> <br/>
+                        <label for="celsius">Celsius</label><br/>
+                        <input type="number" id="celsius" placeholder="Enter temperature"><br/>
+                        <button type="button" onclick="convertTemperature()">Convert</button><br/>
+                        <input type="number" id="fahrenheit" readonly placeholder="Result"><br/>
                         <label for="fahrenheit">Fahrenheit</label>
                     </fieldset>
+                    <aside>
+                        To convert celsius to fahrenheit yourself, use this formula replacing the `C` with your temperature in celsius: (C × 9/5) + 32
+                    </aside>
                 </article>
-
-                <aside>
-                    To convert celsius to fahrenheit yourself, use this formula replacing the `C` with your temperature in celsius: (C × 9/5) + 32
-                </aside>
             </div>
         </section>
 
-        <section id="weight">
+        <div style="clear:both;"></div>
+      
+        <section id="weight" class="b weight">          
             <div id="wgt">
                 <figure>
-                    <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-CD0101EN-SkillsNetwork/labs/Theia%20Labs/02%20-%20HTML5%20Elements/images/weight.png" 
-                         width="200" alt="Weight scale"/>
-                    <figcaption>Kilogram to Pound Conversion</figcaption>
+                    <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-CD0101EN-SkillsNetwork/labs/Theia%20Labs/02%20-%20HTML5%20Elements/images/weight.png"  
+                         width="150" alt="Weight scale"/>
+                    <figcaption>Kilograms to Pound Conversion</figcaption>
                 </figure>
-        
                 <article>
                     <fieldset>
                         <legend>Weight</legend>
-                        <label for="kilo">Kilograms</label> <br/>
-                        <input type="number" id="kilo" placeholder="Enter weight"> <br/>
-                        
-                        <button type="button" onclick="convertWeight()">Convert</button> <br/>
-                        
-                        <input type="number" id="pounds" class="output" readonly> <br/>
-                        <label for="pounds">Pounds</label>
+                        <label for="kilo">Kilograms</label><br/>
+                        <input type="number" id="kilo" placeholder="Enter weight"><br/>
+                        <button type="button" onclick="convertWeight()">Convert</button><br/>
+                        <input type="number" id="pounds" readonly placeholder="Result"><br/>
+                        <label for="pounds">Pounds</label>    
                     </fieldset>
+                    <aside>
+                        To convert kilograms to pounds yourself, use this formula replacing the `kg` with your weight in kilograms: kg × 2.205
+                    </aside>      
                 </article>
-        
-                <aside>
-                    To convert kilograms to pounds yourself, use this formula replacing the `kg` with your weight in kilograms: kg × 2.205
-                </aside>
             </div>
         </section>
 
-        <section id="distance">
+        <div style="clear:both;"></div>
+
+        <section id="distance" class="b distance">
             <div id="dst">
                 <figure>
-                    <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-CD0101EN-SkillsNetwork/labs/Theia%20Labs/02%20-%20HTML5%20Elements/images/speedo.png" 
-                         width="200" alt="Speedometer"/>
-                    <figcaption>Kilometer to Mile Conversion</figcaption>
+                    <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-CD0101EN-SkillsNetwork/labs/Theia%20Labs/02%20-%20HTML5%20Elements/images/speedo.png"  
+                         width="150" alt="Speedometer"/>
+                    <figcaption>Kilometers to Miles Conversion</figcaption>
                 </figure>
-        
                 <article>
                     <fieldset>
                         <legend>Distance</legend>
-                        <label for="km">Kilometers</label> <br/>
-                        <input type="number" id="km" placeholder="Enter distance"> <br/>
-                        
-                        <button type="button" onclick="convertDistance()">Convert</button> <br/>
-                        
-                        <input type="number" id="miles" class="output" readonly> <br/>
+                        <label for="km">Kilometers</label><br/>
+                        <input type="number" id="km" placeholder="Enter distance"><br/>
+                        <button type="button" onclick="convertDistance()">Convert</button><br/>
+                        <input type="number" id="miles" readonly placeholder="Result"><br/>
                         <label for="miles">Miles</label>
                     </fieldset>
+                    <aside>
+                        To convert kilometers to miles yourself, use this formula replacing the `km` with your distance in kilometers: km ÷ 1.609
+                    </aside>
                 </article>
-
-                <aside>
-                    To convert kilometers to miles yourself, use this formula replacing the `km` with your distance in kilometers: km ÷ 1.609
-                </aside>
             </div>
         </section>
+        <div style="clear:both;"></div>
+
     </div>
 
-    <div id="go-home">
+    <div id="go-home" class="iconbutton">
         <a href="#home">
             <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-CD0101EN-SkillsNetwork/labs/Theia%20Labs/02%20-%20HTML5%20Elements/images/home.svg" 
-                 alt="Home icon"/>
+                 alt="Home"/>
         </a>
     </div>
 
-    <footer>Learn more about HTML as a part of the IBM Fullstack Cloud Developer Certification</footer>
+    <footer>Learn more about HTML and CSS as a part of IBM Fullstack Cloud Developer Certification</footer>
 
     <script>
         function convertTemperature() {
